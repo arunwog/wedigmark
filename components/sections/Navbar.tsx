@@ -20,19 +20,25 @@ export default function Navbar() {
                         href="#"
                         className="transition hover:text-orange-500"
                     >
-                        Processes
+                        Portfolio
                     </a>
                     <a
                         href="#"
                         className="transition hover:text-orange-500"
                     >
-                        Work
+                        Insights
                     </a>
                     <a
                         href="#"
                         className="transition hover:text-orange-500"
                     >
-                        Contact
+                         About                         
+                    </a>
+                    <a
+                        href="#"
+                        className="transition hover:text-orange-500"
+                    >
+                         Contact                 
                     </a>
                 </div>
 
