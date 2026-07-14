@@ -13,7 +13,7 @@ const projects = [
   },
   {
     name: "Lume",
-    logo: "/logos/lume.png",
+    logo: "/logos/Lume.png",
     category: "Personal Care",
     logoClass: "w-[280px]",
   },
