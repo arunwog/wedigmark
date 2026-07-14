@@ -11,34 +11,35 @@ export default function Navbar() {
 
                 <div className="hidden md:flex items-center gap-8 text-gray-300">
                     <a
-                        href="#"
+                        href="/services"
                         className="transition hover:text-orange-500"
                     >
                         Services
                     </a>
+
                     <a
-                        href="#"
+                        href="/portfolio"
                         className="transition hover:text-orange-500"
                     >
                         Portfolio
                     </a>
                     <a
-                        href="#"
+                        href="/insights"
                         className="transition hover:text-orange-500"
                     >
                         Insights
                     </a>
                     <a
-                        href="#"
+                        href="/about"
                         className="transition hover:text-orange-500"
                     >
-                         About                         
+                        About
                     </a>
                     <a
-                        href="#"
+                        href="/contact"
                         className="transition hover:text-orange-500"
                     >
-                         Contact                 
+                        Contact
                     </a>
                 </div>
 

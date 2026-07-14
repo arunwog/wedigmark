@@ -44,7 +44,7 @@ export default function Services() {
           </p>
 
           <h2 className="text-4xl md:text-6xl font-bold leading-tight tracking-[-0.03em]">
-             <span className="text-orange-500">Everything</span> your marketing needs.
+            <span className="text-orange-500">Everything</span> your marketing needs.
             <br />
             Nothing it doesn't.
           </h2>

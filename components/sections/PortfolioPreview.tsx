@@ -39,10 +39,10 @@ export default function PortfolioPreview() {
           <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
             Portfolio
           </p>
- 
-<p className="mt-6 text-sm font-medium uppercase tracking-[0.28em] text-gray-400">
-  Creative Strategy:
-</p>
+
+          <p className="mt-6 text-sm font-medium uppercase tracking-[0.28em] text-gray-400">
+            Creative Strategy:
+          </p>
 
           <h2 className="mt-2 text-4xl font-bold leading-tight tracking-[-0.03em] md:text-6xl">
             Built to think better.
@@ -64,10 +64,9 @@ export default function PortfolioPreview() {
                 className={`
                   flex min-h-[260px] w-full flex-col justify-between
                   rounded-3xl border border-[#454545] bg-[#1A1A1A] border border-white/10 p-10
-                  ${
-                    isLastProject
-                      ? "md:col-span-2 md:w-[calc(50%-1rem)] md:justify-self-center"
-                      : ""
+                  ${isLastProject
+                    ? "md:col-span-2 md:w-[calc(50%-1rem)] md:justify-self-center"
+                    : ""
                   }
                 `}
               >

@@ -70,8 +70,8 @@ export default function Process() {
                 <p className="mt-16 max-w-3xl text-2xl font-semibold leading-relaxed text-white md:text-3xl">
                     Great marketing rarely starts in <span className="text-orange-500">Ads Manager.
 
-                    {" "}
-                    It starts with</span> understanding people.
+                        {" "}
+                        It starts with</span> understanding people.
 
                 </p>
             </div>

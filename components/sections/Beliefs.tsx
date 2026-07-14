@@ -65,10 +65,10 @@ export default function Beliefs() {
           ))}
         </div>
 
-       <p className="mt-24 max-w-4xl text-4xl font-bold leading-tight tracking-[-0.03em] md:text-6xl">
-  <span className="block">Platforms change.</span>
-  <span className="mt-2 block text-orange-500">People won't.</span>
-</p>
+        <p className="mt-24 max-w-4xl text-4xl font-bold leading-tight tracking-[-0.03em] md:text-6xl">
+          <span className="block">Platforms change.</span>
+          <span className="mt-2 block text-orange-500">People won't.</span>
+        </p>
       </div>
     </section>
   );
