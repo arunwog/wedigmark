@@ -39,6 +39,10 @@ export default function PortfolioPreview() {
           <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
             Portfolio
           </p>
+ 
+<p className="mt-8 text-sm font-medium uppercase tracking-[0.28em] text-gray-400">
+  Creative Strategy:
+</p>
 
           <h2 className="text-4xl font-bold leading-tight tracking-[-0.03em] md:text-6xl">
             Built to think better.
