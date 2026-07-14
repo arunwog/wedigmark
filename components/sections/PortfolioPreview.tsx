@@ -59,7 +59,7 @@ export default function PortfolioPreview() {
                 key={project.name}
                 className={`
                   flex min-h-[260px] w-full flex-col justify-between
-                  rounded-3xl border border-[#454545] bg-[#2A2A2A] p-10
+                  rounded-3xl border border-[#454545] bg-[#1A1A1A] border border-white/10 p-10
                   ${
                     isLastProject
                       ? "md:col-span-2 md:w-[calc(50%-1rem)] md:justify-self-center"
