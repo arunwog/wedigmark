@@ -11,7 +11,7 @@ import Footer from "@/components/sections/Footer";
 export default function Home() {
      return (
           <>
-               <Navbar />
+
                <Hero />
                <Services />
                <Process />
