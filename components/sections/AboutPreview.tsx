@@ -1,23 +1,27 @@
 const obsessions = [
   {
-      title: <span className="text-orange-500">Customer Psychology</span>,
+    id: "customer-psychology",
+    title: "Customer Psychology",
     description:
       "Understanding why people buy before deciding how to sell.",
   },
   {
-    title:  <span className="text-orange-500">Research</span>,
+    id: "research",
+    title: "Research",
     description:
       "The better the questions, the better the strategy. We don't skip this part.",
   },
   {
-    title: <span className="text-orange-500">Positioning</span>,
+    id: "positioning",
+    title: "Positioning",
     description:
       "Helping businesses become the obvious choice instead of the loudest one.",
   },
   {
-    title: <span className="text-orange-500">Growth</span>,
+    id: "growth",
+    title: "Growth",
     description:
-      "Not spikes. Not vanity metrics. Sustainable, measurable progress that compounds.",
+      "Built to compound over time, not disappear the moment you stop spending.",
   },
 ];
 
@@ -32,7 +36,7 @@ export default function AboutPreview() {
         <div className="mt-6 grid gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-24">
           <div>
             <h2 className="max-w-3xl text-5xl font-bold leading-tight tracking-[-0.03em] md:text-7xl">
-              What we&apos;re <span className="text-orange-500">obsessed</span> with.
+              What we&apos;re obsessed with.
             </h2>
 
             <div className="mt-10 max-w-2xl space-y-6 text-lg leading-8 text-gray-400">
@@ -66,7 +70,7 @@ export default function AboutPreview() {
           <div className="border-t border-white/15">
             {obsessions.map((item) => (
               <div
-                key={item.title}
+                key={item.id}
                 className="border-b border-white/15 py-8"
               >
                 <h3 className="text-2xl font-semibold">{item.title}</h3>
