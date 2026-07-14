@@ -36,7 +36,7 @@ export default function AboutPreview() {
         <div className="mt-6 grid gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-24">
           <div>
             <h2 className="max-w-3xl text-5xl font-bold leading-tight tracking-[-0.03em] md:text-7xl">
-              What we&apos;re obsessed with.
+              What we&apos;re <span className="text-orange-500">obsessed</span> with.
             </h2>
 
             <div className="mt-10 max-w-2xl space-y-6 text-lg leading-8 text-gray-400">

@@ -45,7 +45,7 @@ export default function PortfolioPreview() {
           </p>
 
           <h2 className="mt-2 text-4xl font-bold leading-tight tracking-[-0.03em] md:text-6xl">
-            Built to think better.
+            Built to think <span className="text-orange-500">better.</span>
           </h2>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-gray-400">
