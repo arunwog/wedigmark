@@ -1,3 +1,5 @@
+import ServicesSubnav from "@/components/services/ServicesSubnav";
+
 const deliverables = [
     {
         title: "Technical SEO",
@@ -51,40 +53,40 @@ const process = [
 export default function SeoGeoPage() {
     return (
         <main className="min-h-screen bg-[#0D0D0D] text-white">
+            <ServicesSubnav />
             {/* Hero */}
-            <section className="px-8 pb-24 pt-40">
-                <div className="mx-auto max-w-7xl">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                        SEO &amp; GEO
-                    </p>
+            <section className="px-8 pb-24 pt-56">                <div className="mx-auto max-w-7xl">
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                    SEO &amp; GEO
+                </p>
 
-                    <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
-                        Be easier to find.
-                        <span className="text-orange-500"> And easier to trust.</span>
-                    </h1>
+                <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
+                    Be easier to find.
+                    <span className="text-orange-500"> And easier to trust.</span>
+                </h1>
 
-                    <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
-                        We improve how brands are discovered across traditional search and
-                        emerging AI-driven search experiences through stronger technical
-                        foundations, clearer content and better authority signals.
-                    </p>
+                <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
+                    We improve how brands are discovered across traditional search and
+                    emerging AI-driven search experiences through stronger technical
+                    foundations, clearer content and better authority signals.
+                </p>
 
-                    <div className="mt-10 flex flex-wrap gap-4">
-                        <a
-                            href="/contact"
-                            className="inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
-                        >
-                            Let&apos;s Talk Search
-                        </a>
+                <div className="mt-10 flex flex-wrap gap-4">
+                    <a
+                        href="/contact"
+                        className="inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+                    >
+                        Let&apos;s Talk Search
+                    </a>
 
-                        <a
-                            href="/portfolio/seo-geo"
-                            className="inline-flex rounded-full border border-white/15 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-orange-500/50 hover:text-orange-500"
-                        >
-                            View SEO &amp; GEO Work
-                        </a>
-                    </div>
+                    <a
+                        href="/portfolio/seo-geo"
+                        className="inline-flex rounded-full border border-white/15 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-orange-500/50 hover:text-orange-500"
+                    >
+                        View SEO &amp; GEO Work
+                    </a>
                 </div>
+            </div>
             </section>
 
             {/* Problem */}

@@ -1,3 +1,5 @@
+import ServicesSubnav from "@/components/services/ServicesSubnav";
+
 const deliverables = [
     {
         title: "Campaign Strategy",
@@ -51,45 +53,44 @@ const process = [
 export default function PerformanceMarketingPage() {
     return (
         <main className="min-h-screen bg-[#0D0D0D] text-white">
-
+            <ServicesSubnav />
             {/* Hero */}
-            <section className="px-8 pb-24 pt-40">
-                <div className="mx-auto max-w-7xl">
+            <section className="px-8 pb-24 pt-56">                <div className="mx-auto max-w-7xl">
 
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                        Performance Marketing
-                    </p>
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                    Performance Marketing
+                </p>
 
-                    <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
-                        Advertising should generate profit,
-                        <span className="text-orange-500"> not just impressions.</span>
-                    </h1>
+                <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
+                    Advertising should generate profit,
+                    <span className="text-orange-500"> not just impressions.</span>
+                </h1>
 
-                    <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
-                        We manage Meta and Google Ads through disciplined testing,
-                        strategic creative decisions and continuous optimisation
-                        designed to produce sustainable growth.
-                    </p>
+                <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
+                    We manage Meta and Google Ads through disciplined testing,
+                    strategic creative decisions and continuous optimisation
+                    designed to produce sustainable growth.
+                </p>
 
-                    <div className="mt-10 flex flex-wrap gap-4">
+                <div className="mt-10 flex flex-wrap gap-4">
 
-                        <a
-                            href="/contact"
-                            className="inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
-                        >
-                            Let's Talk Performance
-                        </a>
+                    <a
+                        href="/contact"
+                        className="inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+                    >
+                        Let's Talk Performance
+                    </a>
 
-                        <a
-                            href="/portfolio/creative-performance"
-                            className="inline-flex rounded-full border border-white/15 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-orange-500/50 hover:text-orange-500"
-                        >
-                            View Campaign Work
-                        </a>
-
-                    </div>
+                    <a
+                        href="/portfolio/creative-performance"
+                        className="inline-flex rounded-full border border-white/15 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-orange-500/50 hover:text-orange-500"
+                    >
+                        View Campaign Work
+                    </a>
 
                 </div>
+
+            </div>
             </section>
 
             {/* Problem */}

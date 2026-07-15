@@ -1,3 +1,5 @@
+import ServicesSubnav from "@/components/services/ServicesSubnav";
+
 const deliverables = [
     {
         title: "Custom-Coded Websites",
@@ -51,39 +53,39 @@ const process = [
 export default function WebDevelopmentPage() {
     return (
         <main className="min-h-screen bg-[#0D0D0D] text-white">
+            <ServicesSubnav />
             {/* Hero */}
-            <section className="px-8 pb-24 pt-40">
-                <div className="mx-auto max-w-7xl">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                        Web Development
-                    </p>
+            <section className="px-8 pb-24 pt-56">                <div className="mx-auto max-w-7xl">
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                    Web Development
+                </p>
 
-                    <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
-                        Your website should help people decide.
-                        <span className="text-orange-500"> Not make them hesitate.</span>
-                    </h1>
+                <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
+                    Your website should help people decide.
+                    <span className="text-orange-500"> Not make them hesitate.</span>
+                </h1>
 
-                    <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
-                        We build and refine WordPress and custom-coded websites designed
-                        around speed, credibility, usability and conversion.
-                    </p>
+                <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
+                    We build and refine WordPress and custom-coded websites designed
+                    around speed, credibility, usability and conversion.
+                </p>
 
-                    <div className="mt-10 flex flex-wrap gap-4">
-                        <a
-                            href="/contact"
-                            className="inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
-                        >
-                            Let&apos;s Talk Web
-                        </a>
+                <div className="mt-10 flex flex-wrap gap-4">
+                    <a
+                        href="/contact"
+                        className="inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+                    >
+                        Let&apos;s Talk Web
+                    </a>
 
-                        <a
-                            href="/portfolio/seo-geo"
-                            className="inline-flex rounded-full border border-white/15 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-orange-500/50 hover:text-orange-500"
-                        >
-                            View Web &amp; Search Work
-                        </a>
-                    </div>
+                    <a
+                        href="/portfolio/seo-geo"
+                        className="inline-flex rounded-full border border-white/15 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-orange-500/50 hover:text-orange-500"
+                    >
+                        View Web &amp; Search Work
+                    </a>
                 </div>
+            </div>
             </section>
 
             {/* Problem */}
