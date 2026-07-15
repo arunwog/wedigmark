@@ -10,7 +10,7 @@ export default function Hero() {
         <h1 className="text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
           We don't launch <span className="text-orange-500">marketing</span>
           <br />
-          that we wouldn't buy ourselves.
+          that we wouldn't buy from  ourselves.
         </h1>
 
         <p className="mt-2 text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
