@@ -206,9 +206,9 @@ export default function Navbar() {
                     <Link
                         href="/contact"
                         className={`transition hover:text-orange-500 ${pathname === "/contact"
-                                ? "text-orange-500"
-                                : ""
-                            }`}                    >
+                            ? "text-orange-500"
+                            : ""
+                            }`}                     >
                         Contact
                     </Link>
                 </div>

@@ -37,7 +37,7 @@ const brands = [
 
 export default function CreativePerformancePage() {
     return (
-        <main className="min-h-screen bg-[#0D0D0D] px-8 pb-24 pt-52 text-white">
+        <main className="min-h-screen px-8 pb-24 pt-52 text-white">
             <PortfolioSubnav />
             <section className="mx-auto max-w-7xl">
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
