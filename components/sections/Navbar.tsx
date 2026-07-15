@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0D0D0D]/70 backdrop-blur-xl">
@@ -21,7 +23,8 @@ export default function Navbar() {
                 <div className="hidden items-center gap-8 text-gray-300 md:flex">
                     <Link
                         href="/"
-                        className="transition hover:text-orange-500"
+                        className={`transition hover:text-orange-500 ${pathname === "/" ? "text-orange-500" : ""
+                            }`}
                     >
                         Home
                     </Link>
@@ -30,7 +33,10 @@ export default function Navbar() {
                     <div className="group relative">
                         <Link
                             href="/services"
-                            className="flex items-center gap-1 transition hover:text-orange-500"
+                            className={`flex items-center gap-1 transition hover:text-orange-500 ${pathname.startsWith("/services")
+                                ? "text-orange-500"
+                                : ""
+                                }`}
                         >
                             Services
 
@@ -123,7 +129,10 @@ export default function Navbar() {
                     <div className="group relative">
                         <Link
                             href="/portfolio/creative-performance"
-                            className="flex items-center gap-1 transition hover:text-orange-500"
+                            className={`flex items-center gap-1 transition hover:text-orange-500 ${pathname.startsWith("/portfolio")
+                                ? "text-orange-500"
+                                : ""
+                                }`}
                         >
                             Portfolio
 
@@ -176,22 +185,30 @@ export default function Navbar() {
 
                     <Link
                         href="/insights"
-                        className="transition hover:text-orange-500"
+                        className={`transition hover:text-orange-500 ${pathname === "/insights"
+                            ? "text-orange-500"
+                            : ""
+                            }`}
                     >
                         Insights
                     </Link>
 
                     <Link
                         href="/about"
-                        className="transition hover:text-orange-500"
+                        className={`transition hover:text-orange-500 ${pathname === "/about"
+                            ? "text-orange-500"
+                            : ""
+                            }`}
                     >
                         About
                     </Link>
 
                     <Link
                         href="/contact"
-                        className="transition hover:text-orange-500"
-                    >
+                        className={`transition hover:text-orange-500 ${pathname === "/contact"
+                                ? "text-orange-500"
+                                : ""
+                            }`}                    >
                         Contact
                     </Link>
                 </div>
