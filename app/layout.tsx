@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Background from "@/components/Background";
+import StrategyCallPopup from "@/components/StrategyCallPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className="relative bg-[#0D0D0D]">
         <Background />
         <Navbar />
+        <StrategyCallPopup />
 
         <main className="relative z-10">
           {children}
