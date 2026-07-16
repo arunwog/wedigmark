@@ -34,7 +34,7 @@ export default function Beliefs() {
         </p>
 
         <h2 className="mt-6 max-w-3xl text-5xl font-bold leading-tight tracking-[-0.03em] md:text-7xl">
-          Algorithms
+          Algorithms change.
           <br />
           People don't.
         </h2>

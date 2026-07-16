@@ -1,29 +1,150 @@
+"use client";
+
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+
+const faqs = [
+  {
+    question: "Why don’t you list your pricing?",
+    answer:
+      "Every business starts from a different place. A company launching its first product has very different needs from one already investing six figures every month in marketing. Rather than force every client into a fixed package, we’d rather understand your business, identify the bottlenecks and recommend only what’s genuinely needed.",
+  },
+  {
+    question: "What happens after we book a call?",
+    answer:
+      "The first conversation isn’t a sales pitch. It’s an opportunity for us to understand your business, where you’re trying to go, what’s getting in the way and whether we’re the right people to help. If we think we can genuinely add value, we’ll propose a way forward. If we don’t, we’ll tell you honestly.",
+  },
+  {
+    question: "Can you guarantee results?",
+    answer:
+      "No. Anyone who guarantees specific marketing results before understanding your business is making a promise they can’t honestly keep. What we do guarantee is thoughtful strategy, transparent communication, rigorous execution and a team that keeps testing, learning and improving.",
+  },
+  {
+    question: "Can you work with our existing marketing team or agency?",
+    answer:
+      "Absolutely. We don’t believe every engagement requires replacing an existing team. Sometimes we’re brought in for creative strategy, performance marketing, website optimisation or simply a second perspective. If working alongside your current team gets the best result, we’re happy to do exactly that.",
+  },
+  {
+    question: "Will we work directly with the founders?",
+    answer:
+      "Yes. We’re intentionally keeping WeDigMark small so every client receives direct involvement from the people responsible for the work. You won’t be handed off to multiple layers of account managers after signing the contract.",
+  },
+  {
+    question: "Do you work with businesses outside India?",
+    answer:
+      "Absolutely. We primarily partner with businesses in North America, Europe, the UK and Australia, while also being very happy to work with ambitious companies in India. Great marketing isn’t limited by geography, and neither are we.",
+  },
+  {
+    question: "How do you decide whether we’re a good fit?",
+    answer:
+      "We’re looking for businesses that value long-term growth over quick tricks. If we don’t believe we’re the right team for the challenge, we’ll tell you. We’d rather walk away from a project than take one on knowing someone else could do a better job.",
+  },
+  {
+    question: "Do you work with competing businesses?",
+    answer:
+      "Sometimes, but never in a way that compromises trust. If we believe working with two direct competitors would create a conflict of interest, we’ll be transparent about it before moving forward. Long-term relationships matter more than short-term revenue.",
+  },
+  {
+    question: "Why should we choose WeDigMark over another agency?",
+    answer:
+      "Because we don’t start with ads. We start with understanding why someone should buy in the first place. Strategy shapes messaging. Messaging shapes creative. Creative shapes performance. That’s why we spend more time understanding your business than chasing trends or copying competitors.",
+  },
+  {
+    question: "What if we only need one service instead of everything?",
+    answer:
+      "That’s completely fine. Some clients only need creative strategy. Others come to us solely for SEO, websites, email marketing or performance marketing. We’re here to solve problems, not sell services you don’t need.",
+  },
+  {
+    question: "How long does it take to see results?",
+    answer:
+      "It depends on what we’re working on. Performance marketing can generate useful insights relatively quickly, while SEO, brand building and organic growth naturally take longer. We’ll set expectations based on your goals, your market and the work involved.",
+  },
+  {
+    question: "Who owns the work we create?",
+    answer:
+      "You do. Whether it’s strategy documents, copy, landing pages or creative assets, the work created specifically for your business belongs to your business. Clients should never feel trapped because they don’t own their own marketing.",
+  },
+  {
+    question: "What if we’re not the right fit for each other?",
+    answer:
+      "That’s completely okay. Not every business is the right fit for WeDigMark, and we’re not the right fit for every business. If we don’t believe we can create meaningful value, we’ll tell you honestly. Long-term trust matters more than short-term revenue.",
+  },
+];
+
+const footerLinks = [
+  {
+    label: "Home",
+    href: "/",
+    section: "/",
+  },
+  {
+    label: "About",
+    href: "/about",
+    section: "/about",
+  },
+  {
+    label: "Services",
+    href: "/services",
+    section: "/services",
+  },
+  {
+    label: "Portfolio",
+    href: "/portfolio/creative-performance",
+    section: "/portfolio",
+  },
+  {
+    label: "Insights",
+    href: "/insights",
+    section: "/insights",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+    section: "/contact",
+  },
+];
+
 export default function Footer() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const pathname = usePathname();
+
+  const toggleFaq = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const visibleFooterLinks = footerLinks.filter((link) => {
+    if (link.section === "/") {
+      return pathname !== "/";
+    }
+
+    return !pathname.startsWith(link.section);
+  });
+
   return (
-    <footer className="border-t border-orange-500/20 bg-transparent px-8 py-24">
+    <footer className="border-t border-orange-500/20 bg-transparent px-8 py-24 text-white">
       <div className="mx-auto max-w-7xl">
 
-        {/* Heading */}
-        <div className="mb-20 text-center">
+        {/* Contact heading */}
+        <div className="mb-20 border-t border-white/10 pt-24 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
             Ready?
           </p>
 
           <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-bold md:text-6xl">
-            Let's stop browsing.
+            Let&apos;s stop browsing.
             <br />
-            Let's start building.
+            Let&apos;s start building.
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
-            Tell us what you're building, where you're getting stuck,
-            and what success would look like.
+            Tell us what you&apos;re building, where you&apos;re getting
+            stuck and what success would look like.
           </p>
         </div>
 
-        {/* Main Footer */}
+        {/* Main footer */}
         <div className="grid gap-12 rounded-3xl border border-white/10 bg-white/[0.03] p-10 md:grid-cols-[1fr_1.4fr]">
-
           {/* Left */}
           <div>
             <h3 className="text-3xl font-bold">
@@ -31,15 +152,44 @@ export default function Footer() {
             </h3>
 
             <p className="mt-5 max-w-sm leading-relaxed text-gray-400">
-              Only marketing we'd buy ourselves.
+              Only marketing we&apos;d buy ourselves.
             </p>
 
-            <div className="mt-10 space-y-3 text-gray-300">
-              <p>Creative Strategy</p>
-              <p>Performance Marketing</p>
-              <p>SEO & GEO</p>
-              <p>Web Development</p>
-              <p>Email Marketing</p>
+            <div className="mt-10 flex flex-col items-start gap-3 text-gray-300">
+              <Link
+                href="/services/creative-strategy"
+                className="transition hover:text-orange-500"
+              >
+                Creative Strategy
+              </Link>
+
+              <Link
+                href="/services/performance-marketing"
+                className="transition hover:text-orange-500"
+              >
+                Performance Marketing
+              </Link>
+
+              <Link
+                href="/services/seo-geo"
+                className="transition hover:text-orange-500"
+              >
+                SEO &amp; GEO
+              </Link>
+
+              <Link
+                href="/services/web-development"
+                className="transition hover:text-orange-500"
+              >
+                Web Development
+              </Link>
+
+              <Link
+                href="/services/email-marketing"
+                className="transition hover:text-orange-500"
+              >
+                Email Marketing
+              </Link>
             </div>
 
             <div className="mt-12 space-y-2">
@@ -51,8 +201,8 @@ export default function Footer() {
               </a>
 
               <p className="text-gray-400">
-                Bengaluru, India
-              </p>
+                Built in Bengaluru.
+                Working with brands worldwide.              </p>
 
               <p className="text-sm text-gray-500">
                 We typically reply within one business day.
@@ -60,99 +210,134 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right */}
+          {/* Contact form */}
           <form className="space-y-5">
-
             <div className="grid gap-5 md:grid-cols-2">
-
               <input
                 type="text"
+                name="name"
                 placeholder="Name"
                 className="rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500"
               />
 
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
                 className="rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500"
               />
-
             </div>
 
             <div className="grid gap-5 md:grid-cols-2">
-
               <input
                 type="text"
+                name="company"
                 placeholder="Company"
                 className="rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500"
               />
 
               <input
-                type="text"
+                type="url"
+                name="website"
                 placeholder="Website (optional)"
                 className="rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500"
               />
-
             </div>
 
             <textarea
               rows={7}
+              name="message"
               placeholder="Tell us about your business..."
-              className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500"
+              className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500"
             />
 
             <button
               type="submit"
-              className="rounded-full bg-orange-500 px-8 py-4 font-semibold transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+              className="rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
             >
-              Let's Talk
+              Let&apos;s Talk
             </button>
-
           </form>
-
         </div>
+
+        {/* FAQ */}
+        <section className="pt-40 pb-24">
+          <div className="mb-14">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+              Frequently Asked Questions (FAQ)
+            </p>
+
+            <h2 className="mt-4 max-w-4xl text-4xl font-bold md:text-6xl">
+              The questions worth asking before we work together.
+            </h2>
+          </div>
+
+          <div className="border-t border-white/10">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+
+              return (
+                <div
+                  key={faq.question}
+                  className="border-b border-white/10"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(index)}
+                    aria-expanded={isOpen}
+                    className="group flex w-full items-center justify-between gap-8 py-7 text-left"
+                  >
+                    <span
+                      className={`text-lg font-semibold transition-colors duration-300 md:text-xl ${isOpen
+                        ? "text-orange-500"
+                        : "text-white group-hover:text-orange-500"
+                        }`}
+                    >
+                      {faq.question}
+                    </span>
+
+                    <span
+                      className={`shrink-0 text-2xl text-orange-500 transition-transform duration-300 ${isOpen ? "rotate-45" : ""
+                        }`}
+                    >
+                      +
+                    </span>
+                  </button>
+
+                  <div
+                    className={`grid transition-all duration-300 ${isOpen
+                      ? "grid-rows-[1fr] pb-7 opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="max-w-4xl leading-relaxed text-gray-400">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
         {/* Bottom */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-gray-500 md:flex-row">
+          <p>© 2026 WeDigMark. All rights reserved.</p>
 
-          <p>
-            © 2026 WeDigMark. All rights reserved.
-          </p>
-
-          <div className="flex gap-6">
-
-            <a
-              href="/about"
-              className="transition hover:text-orange-500"
-            >
-              About
-            </a>
-
-            <a
-              href="/services"
-              className="transition hover:text-orange-500"
-            >
-              Services
-            </a>
-
-            <a
-              href="/portfolio"
-              className="transition hover:text-orange-500"
-            >
-              Portfolio
-            </a>
-
-            <a
-              href="/insights"
-              className="transition hover:text-orange-500"
-            >
-              Insights
-            </a>
-
+          <div className="flex flex-wrap justify-center gap-6">
+            {visibleFooterLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="transition hover:text-orange-500"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
-
         </div>
-
       </div>
     </footer>
   );
