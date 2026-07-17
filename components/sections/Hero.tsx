@@ -1,26 +1,44 @@
+"use client";
+
 import Button from "@/components/ui/Button";
+import Reveal from "@/components/Reveal";
+
 export default function Hero() {
+  function openStrategyCall() {
+    window.dispatchEvent(new Event("open-strategy-call"));
+  }
+
   return (
-    <section className="min-h-screen pt-28 bg-[#0D0D0D] text-white flex items-center justify-center px-6">
+    <section className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-6 pt-28 text-white">
       <div className="max-w-4xl text-center">
-        <p className="uppercase tracking-[0.35em] text-orange-500 text-sm mb-6">
-          We Dig Mark
-        </p>
+        <Reveal delay={0.05} y={16}>
+          <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
+            We Dig Mark
+          </p>
+        </Reveal>
 
-        <h1 className="text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
-          We don't launch <span className="text-orange-500">marketing</span>
-          <br />
-          that we wouldn't buy from  ourselves.
-        </h1>
+        <Reveal delay={0.15} y={28}>
+          <h1 className="text-5xl font-bold leading-[0.95] tracking-[-0.04em] md:text-7xl">
+            We don&apos;t launch{" "}
+            <span className="text-orange-500">marketing</span>
+            <br />
+            that we wouldn&apos;t buy from ourselves.
+          </h1>
+        </Reveal>
 
-        <p className="mt-2 text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
-          We treat your budget like our own.
-          <br />
-          Expect transparent strategy, clear communication, and real results
-        </p>
-        <div className="mt-16">
-          <Button>Book a Strategy Call</Button>
-        </div>
+        <Reveal delay={0.28} y={22}>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
+            We treat your budget like our own.
+            <br />
+            Expect transparent strategy, clear communication and real results.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.4} y={18}>
+          <div className="mt-14" onClick={openStrategyCall}>
+            <Button>Book a Strategy Call</Button>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

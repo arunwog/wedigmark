@@ -5,6 +5,8 @@ import {
   Mail,
 } from "lucide-react";
 
+import Reveal from "@/components/Reveal";
+
 const services = [
   {
     icon: Target,
@@ -34,64 +36,71 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-[#0D0D0D] text-white px-6 py-32">
-      <div className="max-w-6xl mx-auto">
-
+    <section className="bg-[#0D0D0D] px-6 py-32 text-white">
+      <div className="mx-auto max-w-6xl">
         <div className="text-center">
+          <Reveal delay={0.05} y={16}>
+            <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
+              What We Do
+            </p>
+          </Reveal>
 
-          <p className="uppercase tracking-[0.35em] text-orange-500 text-sm mb-6">
-            What We Do
-          </p>
+          <Reveal delay={0.12} y={24}>
+            <h2 className="text-4xl font-bold leading-tight tracking-[-0.03em] md:text-6xl">
+              <span className="text-orange-500">Everything</span> your marketing needs.
+              <br />
+              Nothing it doesn&apos;t.
+            </h2>
+          </Reveal>
 
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight tracking-[-0.03em]">
-            <span className="text-orange-500">Everything</span> your marketing needs.
-            <br />
-            Nothing it doesn't.
-          </h2>
-
-          <p className="mt-5 text-gray-400 text-lg max-w-3xl mx-auto">
-            Creative strategy, SEO, performance marketing, and email
-            marketing—all working together to grow your business.
-          </p>
-
+          <Reveal delay={0.2} y={20}>
+            <p className="mx-auto mt-5 max-w-3xl text-lg text-gray-400">
+              Creative strategy, SEO, performance marketing and email
+              marketing, all working together to grow your business.
+            </p>
+          </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-20">
-
-          {services.map((service) => {
+        <div className="mt-20 grid gap-8 md:grid-cols-2">
+          {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
-              <div
+              <Reveal
                 key={service.title}
-                className="
-                  rounded-3xl
-                  border
-                  border-white/10
-                  bg-[#121212]
-                  p-10
-                  transition-all
-                  duration-300
-                  hover:-translate-y-2
-                  hover:border-orange-500
-                "
+                delay={0.08 * index}
+                y={28}
               >
-                <Icon
-                  size={36}
-                  className="text-orange-500 mb-8"
-                />
+                <div
+                  className="
+                    h-full
+                    rounded-3xl
+                    border
+                    border-white/10
+                    bg-[#121212]
+                    p-10
+                    transition-all
+                    duration-300
+                    hover:-translate-y-2
+                    hover:border-orange-500
+                  "
+                >
+                  <Icon
+                    size={36}
+                    className="mb-8 text-orange-500"
+                  />
 
-                <h3 className="text-2xl font-semibold mb-4">
-                  {service.title}
-                </h3>
+                  <h3 className="mb-4 text-2xl font-semibold">
+                    {service.title}
+                  </h3>
 
-                <p className="text-gray-400 leading-8">
-                  {service.description}
-                </p>
-              </div>
+                  <p className="leading-8 text-gray-400">
+                    {service.description}
+                  </p>
+                </div>
+              </Reveal>
             );
           })}
-
         </div>
       </div>
     </section>

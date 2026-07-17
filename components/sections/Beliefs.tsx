@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const beliefs = [
   {
     number: "01",
@@ -15,7 +17,7 @@ const beliefs = [
     number: "03",
     title: "Research is a competitive advantage.",
     description:
-      "We'd rather spend another hour understanding your customer than another thousand rupees hoping Meta figures it out.",
+      "We'd rather spend another hour understanding your customer than another thousand in ad spend hoping Meta figures it out.",
   },
   {
     number: "04",
@@ -29,46 +31,59 @@ export default function Beliefs() {
   return (
     <section className="bg-[#0D0D0D] px-6 py-32 text-white">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm uppercase tracking-[0.35em] text-orange-500">
-          OUR BELIEFS
-        </p>
+        <Reveal delay={0.05} y={16}>
+          <p className="text-sm uppercase tracking-[0.35em] text-orange-500">
+            Our Beliefs
+          </p>
+        </Reveal>
 
-        <h2 className="mt-6 max-w-3xl text-5xl font-bold leading-tight tracking-[-0.03em] md:text-7xl">
-          Algorithms change.
-          <br />
-          People don't.
-        </h2>
+        <Reveal delay={0.12} y={26}>
+          <h2 className="mt-6 max-w-3xl text-5xl font-bold leading-tight tracking-[-0.03em] md:text-7xl">
+            Algorithms change.
+            <br />
+            People don&apos;t.
+          </h2>
+        </Reveal>
 
-        <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
-          Platforms evolve. AI improves. Algorithms get rewritten. Human
-          psychology rarely does. That's the layer we choose to build on.
-        </p>
+        <Reveal delay={0.2} y={20}>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
+            Platforms evolve. AI improves. Algorithms get rewritten. Human
+            psychology rarely does. That&apos;s the layer we choose to build on.
+          </p>
+        </Reveal>
 
         <div className="mt-20 border-t border-white/10">
-          {beliefs.map((belief) => (
-            <div
+          {beliefs.map((belief, index) => (
+            <Reveal
               key={belief.number}
-              className="grid gap-8 border-b border-white/10 py-10 md:grid-cols-[80px_280px_1fr]"
+              delay={index * 0.08}
+              y={24}
             >
-              <p className="text-sm font-semibold tracking-[0.25em] text-orange-500">
-                {belief.number}
-              </p>
+              <div className="grid gap-8 border-b border-white/10 py-10 md:grid-cols-[80px_280px_1fr]">
+                <p className="text-sm font-semibold tracking-[0.25em] text-orange-500">
+                  {belief.number}
+                </p>
 
-              <h3 className="text-3xl font-semibold">
-                {belief.title}
-              </h3>
+                <h3 className="text-3xl font-semibold">
+                  {belief.title}
+                </h3>
 
-              <p className="max-w-2xl text-lg leading-8 text-gray-400">
-                {belief.description}
-              </p>
-            </div>
+                <p className="max-w-2xl text-lg leading-8 text-gray-400">
+                  {belief.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
 
-        <p className="mt-24 max-w-4xl text-4xl font-bold leading-tight tracking-[-0.03em] md:text-6xl">
-          <span className="block">Platforms change.</span>
-          <span className="mt-2 block text-orange-500">People won't.</span>
-        </p>
+        <Reveal delay={0.15} y={28}>
+          <p className="mt-24 max-w-4xl text-4xl font-bold leading-tight tracking-[-0.03em] md:text-6xl">
+            <span className="block">Platforms change.</span>
+            <span className="mt-2 block text-orange-500">
+              People won&apos;t.
+            </span>
+          </p>
+        </Reveal>
       </div>
     </section>
   );

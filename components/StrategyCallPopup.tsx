@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 type FormStatus = "idle" | "sending" | "success" | "error";
 
 const STORAGE_KEY = "wedigmark-strategy-popup-dismissed";
+const SESSION_KEY = "wedigmark-strategy-popup-shown-this-session";
 
 export default function StrategyCallPopup() {
     const pathname = usePathname();
@@ -22,10 +23,42 @@ export default function StrategyCallPopup() {
     const hasOpened = useRef(false);
 
     useEffect(() => {
-        const wasDismissed =
+        const handleOpenStrategyCall = () => {
+            hasOpened.current = true;
+
+            window.sessionStorage.setItem(
+                SESSION_KEY,
+                "true"
+            );
+
+            setIsOpen(true);
+        };
+
+        window.addEventListener(
+            "open-strategy-call",
+            handleOpenStrategyCall
+        );
+
+        return () => {
+            window.removeEventListener(
+                "open-strategy-call",
+                handleOpenStrategyCall
+            );
+        };
+    }, []);
+
+    useEffect(() => {
+        const wasPermanentlyDismissed =
             window.localStorage.getItem(STORAGE_KEY) === "true";
 
-        if (wasDismissed || pathname === "/contact") {
+        const wasShownThisSession =
+            window.sessionStorage.getItem(SESSION_KEY) === "true";
+
+        if (
+            wasPermanentlyDismissed ||
+            wasShownThisSession ||
+            pathname === "/contact"
+        ) {
             return;
         }
 
@@ -35,10 +68,13 @@ export default function StrategyCallPopup() {
             }
 
             hasOpened.current = true;
+
+            window.sessionStorage.setItem(SESSION_KEY, "true");
+
             setIsOpen(true);
         };
 
-        const timer = window.setTimeout(openPopup, 5000);
+        const timer = window.setTimeout(openPopup, 15000);
 
         const handleScroll = () => {
             const documentHeight =
@@ -49,7 +85,8 @@ export default function StrategyCallPopup() {
                 return;
             }
 
-            const scrollProgress = window.scrollY / documentHeight;
+            const scrollProgress =
+                window.scrollY / documentHeight;
 
             if (scrollProgress >= 0.6) {
                 openPopup();
@@ -62,7 +99,10 @@ export default function StrategyCallPopup() {
 
         return () => {
             window.clearTimeout(timer);
-            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener(
+                "scroll",
+                handleScroll
+            );
         };
     }, [pathname]);
 

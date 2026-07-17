@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import Reveal from "@/components/Reveal";
+
 const services = [
     {
         number: "01",
@@ -106,20 +108,29 @@ export default function ServicesPage() {
             {/* Hero */}
             <section className="px-8 pb-24 pt-40">
                 <div className="mx-auto max-w-7xl">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                        What We Do
-                    </p>
+                    <Reveal y={16}>
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                            What We Do
+                        </p>
+                    </Reveal>
 
-                    <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
-                        Marketing services built around one thing:
-                        <span className="text-orange-500"> making growth happen.</span>
-                    </h1>
+                    <Reveal delay={0.08} y={26}>
+                        <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
+                            Marketing services built around one thing:
+                            <span className="text-orange-500">
+                                {" "}
+                                making growth happen.
+                            </span>
+                        </h1>
+                    </Reveal>
 
-                    <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
-                        We combine creative strategy, paid media, search, web development
-                        and email marketing into systems designed to attract attention,
-                        convert demand and compound growth.
-                    </p>
+                    <Reveal delay={0.16} y={20}>
+                        <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
+                            We combine creative strategy, paid media, search, web
+                            development and email marketing into systems designed to
+                            attract attention, convert demand and compound growth.
+                        </p>
+                    </Reveal>
                 </div>
             </section>
 
@@ -127,22 +138,30 @@ export default function ServicesPage() {
             <section className="border-t border-white/10 px-8 py-24">
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-14">
-                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                            Capabilities
-                        </p>
+                        <Reveal y={16}>
+                            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                                Capabilities
+                            </p>
+                        </Reveal>
 
-                        <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
-                            Different disciplines. One growth system.
-                        </h2>
+                        <Reveal delay={0.08} y={24}>
+                            <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
+                                Different disciplines. One growth system.
+                            </h2>
+                        </Reveal>
                     </div>
 
                     <div className="grid gap-6">
-                        {services.map((service) => {
-                            const cardClasses =
-                                "group grid gap-8 rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/[0.05] md:grid-cols-[120px_1fr_1fr]";
-
-                            const cardContent = (
-                                <>
+                        {services.map((service, index) => (
+                            <Reveal
+                                key={service.name}
+                                delay={index * 0.08}
+                                y={24}
+                            >
+                                <Link
+                                    href={service.href}
+                                    className="group grid h-full gap-8 rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/[0.05] md:grid-cols-[120px_1fr_1fr]"
+                                >
                                     <div>
                                         <span className="text-sm font-semibold text-orange-500">
                                             {service.number}
@@ -169,40 +188,25 @@ export default function ServicesPage() {
                                         </p>
 
                                         <ul className="space-y-3">
-                                            {service.deliverables.map((deliverable) => (
-                                                <li
-                                                    key={deliverable}
-                                                    className="flex items-start gap-3 text-gray-300"
-                                                >
-                                                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
-                                                    <span>{deliverable}</span>
-                                                </li>
-                                            ))}
+                                            {service.deliverables.map(
+                                                (deliverable) => (
+                                                    <li
+                                                        key={deliverable}
+                                                        className="flex items-start gap-3 text-gray-300"
+                                                    >
+                                                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
+
+                                                        <span>
+                                                            {deliverable}
+                                                        </span>
+                                                    </li>
+                                                ),
+                                            )}
                                         </ul>
                                     </div>
-                                </>
-                            );
-
-                            if (service.href) {
-                                return (
-                                    <Link
-                                        key={service.name}
-                                        href={service.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={cardClasses}
-                                    >
-                                        {cardContent}
-                                    </Link>
-                                );
-                            }
-
-                            return (
-                                <article key={service.name} className={cardClasses}>
-                                    {cardContent}
-                                </article>
-                            );
-                        })}
+                                </Link>
+                            </Reveal>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -211,33 +215,41 @@ export default function ServicesPage() {
             <section className="border-t border-white/10 px-8 py-24">
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-14">
-                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                            How We Work
-                        </p>
+                        <Reveal y={16}>
+                            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                                How We Work
+                            </p>
+                        </Reveal>
 
-                        <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
-                            Strategy first. Execution second. Optimisation always.
-                        </h2>
+                        <Reveal delay={0.08} y={24}>
+                            <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
+                                Strategy first. Execution second. Optimisation
+                                always.
+                            </h2>
+                        </Reveal>
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                        {process.map((step) => (
-                            <div
+                        {process.map((step, index) => (
+                            <Reveal
                                 key={step.title}
-                                className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition duration-300 hover:border-orange-500/40 hover:bg-white/[0.05]"
+                                delay={index * 0.08}
+                                y={22}
                             >
-                                <span className="text-sm font-semibold text-orange-500">
-                                    {step.number}
-                                </span>
+                                <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/[0.05]">
+                                    <span className="text-sm font-semibold text-orange-500">
+                                        {step.number}
+                                    </span>
 
-                                <h3 className="mt-8 text-2xl font-semibold transition-colors duration-300 group-hover:text-orange-500">
-                                    {step.title}
-                                </h3>
+                                    <h3 className="mt-8 text-2xl font-semibold transition-colors duration-300 group-hover:text-orange-500">
+                                        {step.title}
+                                    </h3>
 
-                                <p className="mt-4 leading-relaxed text-gray-400">
-                                    {step.description}
-                                </p>
-                            </div>
+                                    <p className="mt-4 leading-relaxed text-gray-400">
+                                        {step.description}
+                                    </p>
+                                </div>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
@@ -246,27 +258,39 @@ export default function ServicesPage() {
             {/* Closing CTA */}
             <section className="border-t border-white/10 px-8 py-24">
                 <div className="mx-auto max-w-7xl">
-                    <div className="rounded-3xl border border-orange-500/20 bg-white/[0.03] px-8 py-16 text-center md:px-16">
-                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                            Let&apos;s Build
-                        </p>
+                    <Reveal y={28}>
+                        <div className="rounded-3xl border border-orange-500/20 bg-white/[0.03] px-8 py-16 text-center md:px-16">
+                            <Reveal y={16}>
+                                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                                    Let&apos;s Build
+                                </p>
+                            </Reveal>
 
-                        <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-bold md:text-6xl">
-                            Good marketing should create momentum, not merely activity.
-                        </h2>
+                            <Reveal delay={0.08} y={24}>
+                                <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-bold md:text-6xl">
+                                    Good marketing should create momentum, not
+                                    merely activity.
+                                </h2>
+                            </Reveal>
 
-                        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
-                            Tell us what you are building, where growth is getting stuck and
-                            what a meaningful win would look like.
-                        </p>
+                            <Reveal delay={0.16} y={20}>
+                                <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
+                                    Tell us what you are building, where growth
+                                    is getting stuck and what a meaningful win
+                                    would look like.
+                                </p>
+                            </Reveal>
 
-                        <a
-                            href="/contact"
-                            className="mt-10 inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
-                        >
-                            Let&apos;s Talk
-                        </a>
-                    </div>
+                            <Reveal delay={0.24} y={18}>
+                                <a
+                                    href="/contact"
+                                    className="mt-10 inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+                                >
+                                    Let&apos;s Talk
+                                </a>
+                            </Reveal>
+                        </div>
+                    </Reveal>
                 </div>
             </section>
         </main>

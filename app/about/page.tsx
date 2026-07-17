@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const principles = [
     {
         number: "01",
@@ -42,7 +44,6 @@ const team = [
         description:
             "Technical execution across websites, SEO and AI-search optimisation, ensuring brands are easy to discover, fast to experience and built to convert.",
     },
-
     {
         name: "Srinivas",
         companyRole: "Co-Founder",
@@ -51,27 +52,33 @@ const team = [
         description:
             "Designs email marketing systems and customer automations that strengthen retention, increase customer lifetime value and build long-term relationships beyond the first purchase.",
     },
-
 ];
+
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-transparent text-white">
             {/* Hero */}
             <section className="px-8 pb-24 pt-40">
                 <div className="mx-auto max-w-7xl">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                        About WeDigMark
-                    </p>
+                    <Reveal y={16}>
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                            About WeDigMark
+                        </p>
+                    </Reveal>
 
-                    <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
-                        We care about what happens
-                        <span className="text-orange-500"> before the click.</span>
-                    </h1>
+                    <Reveal delay={0.08} y={26}>
+                        <h1 className="max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
+                            We care about what happens
+                            <span className="text-orange-500"> before the click.</span>
+                        </h1>
+                    </Reveal>
 
-                    <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
-                        WeDigMark is a strategy-led digital marketing agency built around a
-                        simple belief: better execution begins with better thinking.
-                    </p>
+                    <Reveal delay={0.16} y={20}>
+                        <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-400">
+                            WeDigMark is a strategy-led digital marketing agency built around a
+                            simple belief: better execution begins with better thinking.
+                        </p>
+                    </Reveal>
                 </div>
             </section>
 
@@ -79,28 +86,36 @@ export default function AboutPage() {
             <section className="border-t border-white/10 px-8 py-24">
                 <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
                     <div>
-                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                            Why We Exist
-                        </p>
+                        <Reveal y={16}>
+                            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                                Why We Exist
+                            </p>
+                        </Reveal>
 
-                        <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-                            Too much marketing begins with tactics and ends with excuses.
-                        </h2>
+                        <Reveal delay={0.08} y={24}>
+                            <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+                                Too much marketing begins with tactics and ends with excuses.
+                            </h2>
+                        </Reveal>
                     </div>
 
                     <div className="space-y-6 text-lg leading-relaxed text-gray-400">
-                        <p>
-                            Ads are launched before the message is clear. Websites are built
-                            before the buyer journey is understood. Content is published
-                            because consistency sounds responsible, even when nobody can
-                            explain what it is supposed to achieve.
-                        </p>
+                        <Reveal delay={0.1} y={20}>
+                            <p>
+                                Ads are launched before the message is clear. Websites are built
+                                before the buyer journey is understood. Content is published
+                                because consistency sounds responsible, even when nobody can
+                                explain what it is supposed to achieve.
+                            </p>
+                        </Reveal>
 
-                        <p>
-                            We built WeDigMark to work the other way around: understand the
-                            problem, identify the highest-leverage opportunity and execute
-                            with a clear reason behind every decision.
-                        </p>
+                        <Reveal delay={0.18} y={20}>
+                            <p>
+                                We built WeDigMark to work the other way around: understand the
+                                problem, identify the highest-leverage opportunity and execute
+                                with a clear reason behind every decision.
+                            </p>
+                        </Reveal>
                     </div>
                 </div>
             </section>
@@ -109,65 +124,83 @@ export default function AboutPage() {
             <section className="border-t border-white/10 px-8 py-24">
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-14">
-                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                            How We Think
-                        </p>
+                        <Reveal y={16}>
+                            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                                How We Think
+                            </p>
+                        </Reveal>
 
-                        <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
-                            The principles behind the work.
-                        </h2>
+                        <Reveal delay={0.08} y={24}>
+                            <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
+                                The principles behind the work.
+                            </h2>
+                        </Reveal>
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-2">
-                        {principles.map((principle) => (
-                            <article
+                        {principles.map((principle, index) => (
+                            <Reveal
                                 key={principle.title}
-                                className="group rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/[0.05]"
+                                delay={index * 0.07}
+                                y={22}
                             >
-                                <span className="text-sm font-semibold text-orange-500">
-                                    {principle.number}
-                                </span>
+                                <article className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/[0.05]">
+                                    <span className="text-sm font-semibold text-orange-500">
+                                        {principle.number}
+                                    </span>
 
-                                <h3 className="mt-8 text-3xl font-semibold transition-colors duration-300 group-hover:text-orange-500">
-                                    {principle.title}
-                                </h3>
+                                    <h3 className="mt-8 text-3xl font-semibold transition-colors duration-300 group-hover:text-orange-500">
+                                        {principle.title}
+                                    </h3>
 
-                                <p className="mt-4 leading-relaxed text-gray-400">
-                                    {principle.description}
-                                </p>
-                            </article>
+                                    <p className="mt-4 leading-relaxed text-gray-400">
+                                        {principle.description}
+                                    </p>
+                                </article>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Team */}
             {/* Who You'll Work With */}
             <section className="border-t border-white/10 px-8 py-24">
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-14">
-                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                            Who You&apos;ll Work With
-                        </p>
+                        <Reveal y={16}>
+                            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                                Who You&apos;ll Work With
+                            </p>
+                        </Reveal>
 
-                        <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
-                            Small by design. Serious about the work.
-                        </h2>
+                        <Reveal delay={0.08} y={24}>
+                            <h2 className="mt-4 max-w-3xl text-4xl font-bold md:text-5xl">
+                                Small by design. Serious about the work.
+                            </h2>
+                        </Reveal>
 
-                        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
-                            We keep the team intentionally small so strategy stays close to
-                            execution. The people you meet are the people doing the work.
-                        </p>
+                        <Reveal delay={0.16} y={20}>
+                            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
+                                We keep the team intentionally small so strategy stays close to
+                                execution. The people you meet are the people doing the work.
+                            </p>
+                        </Reveal>
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-2">
                         {team.map((member, index) => (
-                            <div
+                            <Reveal
                                 key={member.name}
-                                className={index === 2 ? "md:col-span-2 flex justify-center" : ""}
+                                delay={index * 0.08}
+                                y={22}
+                                className={
+                                    index === 2
+                                        ? "md:col-span-2 flex justify-center"
+                                        : ""
+                                }
                             >
                                 <article
-                                    className={`group rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/[0.05] ${index === 2 ? "w-full md:max-w-[48%]" : ""
+                                    className={`group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-white/[0.05] ${index === 2 ? "w-full md:max-w-[48%]" : ""
                                         }`}
                                 >
                                     <h3 className="text-3xl font-semibold transition-colors duration-300 group-hover:text-orange-500">
@@ -190,35 +223,44 @@ export default function AboutPage() {
                                         {member.description}
                                     </p>
                                 </article>
-                            </div>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
             </section>
+
             {/* Difference */}
             <section className="border-t border-white/10 px-8 py-24">
                 <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
                     <div>
-                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                            What Makes Us Different
-                        </p>
+                        <Reveal y={16}>
+                            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                                What Makes Us Different
+                            </p>
+                        </Reveal>
 
-                        <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-                            We do not separate strategy from execution.
-                        </h2>
+                        <Reveal delay={0.08} y={24}>
+                            <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+                                We do not separate strategy from execution.
+                            </h2>
+                        </Reveal>
                     </div>
 
                     <div className="space-y-6 text-lg leading-relaxed text-gray-400">
-                        <p>
-                            Creative strategy influences media buying. Search affects website
-                            structure. Website friction changes campaign performance. Email
-                            changes customer value.
-                        </p>
+                        <Reveal delay={0.1} y={20}>
+                            <p>
+                                Creative strategy influences media buying. Search affects website
+                                structure. Website friction changes campaign performance. Email
+                                changes customer value.
+                            </p>
+                        </Reveal>
 
-                        <p>
-                            We look at those disciplines as one connected growth system
-                            instead of five unrelated services competing for attention.
-                        </p>
+                        <Reveal delay={0.18} y={20}>
+                            <p>
+                                We look at those disciplines as one connected growth system
+                                instead of five unrelated services competing for attention.
+                            </p>
+                        </Reveal>
                     </div>
                 </div>
             </section>
@@ -226,27 +268,37 @@ export default function AboutPage() {
             {/* CTA */}
             <section className="border-t border-white/10 px-8 py-24">
                 <div className="mx-auto max-w-7xl">
-                    <div className="rounded-3xl border border-orange-500/20 bg-white/[0.03] px-8 py-16 text-center md:px-16">
-                        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
-                            Work With Us
-                        </p>
+                    <Reveal y={28}>
+                        <div className="rounded-3xl border border-orange-500/20 bg-white/[0.03] px-8 py-16 text-center md:px-16">
+                            <Reveal delay={0.08} y={14}>
+                                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
+                                    Work With Us
+                                </p>
+                            </Reveal>
 
-                        <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-bold md:text-6xl">
-                            Good work begins with an honest conversation.
-                        </h2>
+                            <Reveal delay={0.16} y={22}>
+                                <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-bold md:text-6xl">
+                                    Good work begins with an honest conversation.
+                                </h2>
+                            </Reveal>
 
-                        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
-                            Tell us what you are building, where growth is getting stuck and
-                            what a meaningful win would look like.
-                        </p>
+                            <Reveal delay={0.24} y={18}>
+                                <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
+                                    Tell us what you are building, where growth is getting stuck
+                                    and what a meaningful win would look like.
+                                </p>
+                            </Reveal>
 
-                        <a
-                            href="/contact"
-                            className="mt-10 inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
-                        >
-                            Let&apos;s Talk
-                        </a>
-                    </div>
+                            <Reveal delay={0.32} y={14}>
+                                <a
+                                    href="/contact"
+                                    className="mt-10 inline-flex rounded-full bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+                                >
+                                    Let&apos;s Talk
+                                </a>
+                            </Reveal>
+                        </div>
+                    </Reveal>
                 </div>
             </section>
         </main>
