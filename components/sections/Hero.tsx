@@ -12,9 +12,9 @@ export default function Hero() {
     <section className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-6 pt-28 text-white">
       <div className="max-w-4xl text-center">
         <Reveal delay={0.05} y={16}>
-          <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
+          <h2 className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
             We Dig Mark
-          </p>
+          </h2>
         </Reveal>
 
         <Reveal delay={0.15} y={28}>
