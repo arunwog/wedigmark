@@ -40,9 +40,9 @@ export default function Services() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <Reveal delay={0.05} y={16}>
-            <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
+            <h2 className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
               What We Do
-            </p>
+            </h2>
           </Reveal>
 
           <Reveal delay={0.12} y={24}>
@@ -54,10 +54,10 @@ export default function Services() {
           </Reveal>
 
           <Reveal delay={0.2} y={20}>
-            <p className="mx-auto mt-5 max-w-3xl text-lg text-gray-400">
+            <h2 className="mx-auto mt-5 max-w-3xl text-lg text-gray-400">
               Creative strategy, SEO, performance marketing and email
               marketing, all working together to grow your business.
-            </p>
+            </h2>
           </Reveal>
         </div>
 
