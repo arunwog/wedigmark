@@ -1,56 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #3b82f6;        /* Blue */
-  --primary-light: #60a5fa;
-  --primary-dark: #1e40af;
-  --secondary: #8b5cf6;      /* Purple */
-  --secondary-light: #a78bfa;
-  --accent: #ec4899;         /* Pink */
-  --success: #10b981;        /* Green */
-  --warning: #f59e0b;        /* Amber */
-  --error: #ef4444;          /* Red */
-  --border: #e5e7eb;         /* Light gray */
-  --muted: #6b7280;          /* Medium gray */
+  /* Colors */
+  --background: #f8fafc;
+  --foreground: #1e293b;
+
+  /* Accent colors */
+  --primary: #2563eb;
+  --secondary: #7c3aed;
+  --muted: #64748b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-success: var(--success);
-  --color-warning: var(--warning);
-  --color-error: var(--error);
-  --color-border: var(--border);
-  --color-muted: var(--muted);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a;
+    --foreground: #f8fafc;
+
     --primary: #60a5fa;
-    --primary-light: #93c5fd;
-    --primary-dark: #1e40af;
     --secondary: #a78bfa;
-    --secondary-light: #c4b5fd;
-    --accent: #f472b6;
-    --success: #34d399;
-    --warning: #fbbf24;
-    --error: #f87171;
-    --border: #374151;
-    --muted: #9ca3af;
+    --muted: #94a3b8;
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.08), transparent 35%),
+    var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Nice text selection */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Smooth transitions */
+a,
+button {
+  transition: all 0.25s ease;
+}
+
+button:hover,
+a:hover {
+  opacity: 0.9;
 }
