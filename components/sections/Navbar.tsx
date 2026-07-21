@@ -4,6 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,11 +23,22 @@ export default function Navbar() {
         <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0D0D0D]/70 backdrop-blur-xl">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
                 {/* Logo */}
-                <h1 className="text-2xl font-bold text-white">
-                    <Link href="/" onClick={closeMobileMenu}>
-                        We<span className="text-orange-500">Dig</span>Mark
-                    </Link>
-                </h1>
+                {/* Logo */}
+                <Link
+                    href="/"
+                    onClick={closeMobileMenu}
+                    aria-label="WeDigMark Home"
+                    className="shrink-0"
+                >
+                    <Image
+                        src="/WDM-wordmark.svg"
+                        alt="WeDigMark"
+                        width={180}
+                        height={40}
+                        priority
+                        className="h-9 w-auto"
+                    />
+                </Link>
 
                 {/* Desktop navigation */}
                 <div className="hidden items-center gap-8 text-gray-300 md:flex">
