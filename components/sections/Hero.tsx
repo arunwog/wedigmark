@@ -19,10 +19,10 @@ export default function Hero() {
 
         <Reveal delay={0.15} y={28}>
           <h1 className="text-5xl font-bold leading-[0.95] tracking-[-0.04em] md:text-7xl">
-            We don&apos;t launch{" "}
-            <span className="text-orange-500">marketing</span>
+            We Don&apos;t Launch{" "}
+            <span className="text-orange-500">Marketing</span>
             <br />
-            that we wouldn&apos;t buy from ourselves.
+            That Feels Like Marketing.
           </h1>
         </Reveal>
 
