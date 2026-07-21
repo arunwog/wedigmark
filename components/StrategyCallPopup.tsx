@@ -302,7 +302,7 @@ export default function StrategyCallPopup() {
                             />
 
                             <input
-                                type="url"
+                                type="text"
                                 name="website"
                                 placeholder="Website"
                                 autoComplete="url"

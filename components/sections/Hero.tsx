@@ -2,6 +2,7 @@
 
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 
 export default function Hero() {
   function openStrategyCall() {
@@ -9,12 +10,17 @@ export default function Hero() {
   }
 
   return (
-    <section className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-6 pt-28 text-white">
-      <div className="max-w-4xl text-center">
+    <section className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-6 pt-20 text-white">
+      <div className="-translate-y-8 max-w-4xl text-center">
         <Reveal delay={0.05} y={16}>
-          <h2 className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-500">
-            We Dig Mark
-          </h2>
+          <Image
+            src="/wedigmark-herologo.png"
+            alt="WeDigMark"
+            width={320}
+            height={60}
+            priority
+            className="mx-auto -mb-15 h-45 w-auto object-contain"
+          />
         </Reveal>
 
         <Reveal delay={0.15} y={28}>
