@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+
 import "./globals.css";
+
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import Background from "@/components/Background";
 import StrategyCallPopup from "@/components/StrategyCallPopup";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -32,14 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="relative bg-[#0D0D0D]">
+      <body
+        className={`${GeistSans.variable} ${GeistMono.variable} relative bg-[#0D0D0D] antialiased`}
+      >
         <Background />
         <Navbar />
         <StrategyCallPopup />
 
-        <main className="relative z-10">
-          {children}
-        </main>
+        <main className="relative z-10">{children}</main>
 
         <Footer />
       </body>
