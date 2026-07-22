@@ -297,12 +297,12 @@ export default function Footer() {
                 />
 
                 <input
-                  type="url"
+                  type="text"
                   name="website"
-                  placeholder="Website (optional)"
+                  placeholder="Website"
                   autoComplete="url"
-                  disabled={formStatus === "sending"}
-                  className="rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500 disabled:cursor-not-allowed disabled:opacity-60"
+                  disabled={status === "sending"}
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500 disabled:cursor-not-allowed disabled:opacity-60"
                 />
               </div>
 
