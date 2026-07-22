@@ -81,7 +81,10 @@ export async function POST(request: Request) {
 
         const { data, error } = await resend.emails.send({
             from: "WeDigMark Website <website@mail.wedigmark.online>",
-            to: ["arunvasishta1211@gmail.com"],
+            to: [
+                "ceo@wedigmark.online",
+                "arunvasishta4@gmail.com",
+            ],
             replyTo: email,
             subject: `New enquiry from ${name}`,
             html: `
