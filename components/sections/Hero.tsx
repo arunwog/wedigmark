@@ -24,7 +24,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.15} y={28}>
-          <h1 className="text-5xl font-bold leading-[0.95] tracking-[-0.04em] md:text-7xl">
+          <h1 className="text-5xl font-bold leading-tight tracking-[-0.04em] md:text-7xl">
             We Don&apos;t Launch{" "}
             <span className="text-orange-500">Marketing</span>
             <br />
@@ -33,7 +33,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.28} y={22}>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
+          <p className="mx-auto mt-1.5 max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
             We treat your budget like our own.
             <br />
             Expect transparent strategy, clear communication and real results.
@@ -41,7 +41,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.4} y={18}>
-          <div className="mt-14" onClick={openStrategyCall}>
+          <div className="mt-18" onClick={openStrategyCall}>
             <Button>Book a Strategy Call</Button>
           </div>
         </Reveal>
