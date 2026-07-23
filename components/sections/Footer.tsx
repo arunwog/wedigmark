@@ -301,7 +301,7 @@ export default function Footer() {
                   name="website"
                   placeholder="Website"
                   autoComplete="url"
-                  disabled={status === "sending"}
+                  disabled={formStatus === "sending"}
                   className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 outline-none transition focus:border-orange-500 disabled:cursor-not-allowed disabled:opacity-60"
                 />
               </div>
