@@ -2,66 +2,124 @@ export default function Background() {
     return (
         <div
             aria-hidden="true"
-            className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#0D0D0D]"
+            className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#03040b]"
         >
-            {/* Top-left orange glow */}
-            <div className="absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full bg-orange-500/[0.07] blur-[140px]" />
+            <style jsx global>{`
+                @keyframes drift {
+                    0%,
+                    100% {
+                        transform: translate3d(0, 0, 0) scale(1);
+                    }
+                    50% {
+                        transform: translate3d(3%, -2%, 0) scale(1.04);
+                    }
+                }
 
-            {/* Lower-right orange glow */}
-            <div className="absolute -bottom-60 -right-40 h-[700px] w-[700px] rounded-full bg-orange-500/[0.05] blur-[170px]" />
+                @keyframes pulse {
+                    0%,
+                    100% {
+                        opacity: 0.5;
+                        transform: scale(1);
+                    }
+                    50% {
+                        opacity: 0.9;
+                        transform: scale(1.05);
+                    }
+                }
+            `}</style>
 
-            {/* Very subtle centre glow */}
-            <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-white/[0.015] blur-[150px]" />
+            {/* Atmospheric field */}
+            <div
+                className="absolute inset-0 opacity-95"
+                style={{
+                    backgroundImage: `
+                        radial-gradient(680px circle at 18% 24%, rgba(96, 165, 250, 0.14), transparent 58%),
+                        radial-gradient(760px circle at 80% 16%, rgba(168, 85, 247, 0.12), transparent 56%),
+                        radial-gradient(860px circle at 50% 112%, rgba(251, 191, 36, 0.08), transparent 64%),
+                        linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 42%, rgba(96, 165, 250, 0.05) 100%)
+                    `,
+                }}
+            />
 
-            {/* Subtle topographic pattern */}
+            {/* Soft haze */}
+            <div
+                className="absolute inset-0 opacity-80"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(120deg, rgba(255,255,255,0.04) 0%, transparent 28%, rgba(255,255,255,0.03) 100%),
+                        conic-gradient(from 220deg at 50% 50%, rgba(255,255,255,0.03), transparent 24%, rgba(96,165,250,0.04) 48%, transparent 70%)
+                    `,
+                }}
+            />
+
+            {/* Large drifting glows */}
+            <div
+                className="absolute left-[-7rem] top-[-4rem] h-[24rem] w-[24rem] rounded-full bg-sky-500/15 blur-[200px]"
+                style={{ animation: "drift 18s ease-in-out infinite" }}
+            />
+            <div
+                className="absolute right-[-6rem] top-[14%] h-[30rem] w-[30rem] rounded-full bg-fuchsia-500/12 blur-[250px]"
+                style={{ animation: "drift 22s ease-in-out infinite reverse" }}
+            />
+            <div
+                className="absolute bottom-[-9rem] left-[34%] h-[28rem] w-[28rem] rounded-full bg-amber-400/10 blur-[220px]"
+                style={{ animation: "pulse 16s ease-in-out infinite" }}
+            />
+
+            {/* Vignette */}
+            <div
+                className="absolute inset-0"
+                style={{
+                    backgroundImage:
+                        "radial-gradient(circle at center, transparent 0%, transparent 54%, rgba(0,0,0,0.6) 100%)",
+                }}
+            />
+
+            {/* Silky structural lines */}
             <svg
                 className="absolute inset-0 h-full w-full opacity-[0.055]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1600 1000"
                 preserveAspectRatio="xMidYMid slice"
             >
-                <g
-                    fill="none"
-                    stroke="rgb(249 115 22)"
+                <path
+                    d="M-80 300C240 140 470 150 620 320C770 490 1040 520 1420 330"
+                    stroke="rgba(255,255,255,0.8)"
                     strokeWidth="1"
-                >
-                    <path d="M-100 220C120 80 320 110 450 230C570 340 720 350 850 240C1030 90 1270 80 1700 290" />
-                    <path d="M-120 270C120 130 310 150 440 270C570 390 730 400 880 280C1060 140 1290 120 1720 330" />
-                    <path d="M-140 320C110 180 300 200 430 320C570 440 740 450 900 330C1080 190 1310 170 1740 380" />
-
-                    <path d="M-100 650C120 500 340 530 480 660C610 780 790 790 940 670C1120 520 1350 500 1700 700" />
-                    <path d="M-120 700C110 550 330 580 470 710C610 830 800 840 960 720C1140 570 1370 550 1720 750" />
-                    <path d="M-140 750C100 600 320 630 460 760C610 880 810 890 980 770C1160 620 1390 600 1740 800" />
-
-                    <path d="M260 50C180 170 200 310 310 400C420 490 430 620 340 730C250 850 270 940 390 1040" />
-                    <path d="M310 20C230 150 250 290 360 380C470 470 480 600 390 710C300 830 320 920 440 1020" />
-
-                    <path d="M1240 -40C1140 100 1160 240 1280 330C1400 420 1410 550 1320 670C1230 790 1250 900 1380 1030" />
-                    <path d="M1300 -70C1200 80 1220 220 1340 310C1460 400 1470 530 1380 650C1290 770 1310 880 1440 1010" />
-                </g>
+                    fill="none"
+                />
+                <path
+                    d="M120 620C340 470 560 470 760 660C940 840 1180 860 1500 700"
+                    stroke="rgba(96,165,250,0.9)"
+                    strokeWidth="1.1"
+                    fill="none"
+                />
+                <path
+                    d="M280 60C470 180 610 300 690 420C765 530 860 640 1030 720"
+                    stroke="rgba(168,85,247,0.75)"
+                    strokeWidth="1"
+                    fill="none"
+                />
             </svg>
 
-            {/* Fine grid */}
+            {/* Fine texture */}
             <div
-                className="absolute inset-0 opacity-[0.025]"
+                className="absolute inset-0 opacity-[0.07]"
                 style={{
                     backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px)",
-                    backgroundSize: "64px 64px",
+                        "linear-gradient(rgba(255,255,255,0.36) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.36) 1px, transparent 1px)",
+                    backgroundSize: "80px 80px",
                 }}
             />
 
-            {/* Soft grain */}
             <div
-                className="absolute inset-0 opacity-[0.035]"
+                className="absolute inset-0 opacity-[0.09]"
                 style={{
                     backgroundImage:
-                        "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.55'/%3E%3C/svg%3E\")",
+                        "radial-gradient(circle, rgba(255,255,255,0.7) 0.8px, transparent 0.8px)",
+                    backgroundSize: "16px 16px",
                 }}
             />
-
-            {/* Dark overlay to keep everything restrained */}
-            <div className="absolute inset-0 bg-black/20" />
         </div>
     );
 }
