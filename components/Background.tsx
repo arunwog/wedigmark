@@ -4,30 +4,6 @@ export default function Background() {
             aria-hidden="true"
             className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#03040b]"
         >
-            <style jsx global>{`
-                @keyframes drift {
-                    0%,
-                    100% {
-                        transform: translate3d(0, 0, 0) scale(1);
-                    }
-                    50% {
-                        transform: translate3d(3%, -2%, 0) scale(1.04);
-                    }
-                }
-
-                @keyframes pulse {
-                    0%,
-                    100% {
-                        opacity: 0.5;
-                        transform: scale(1);
-                    }
-                    50% {
-                        opacity: 0.9;
-                        transform: scale(1.05);
-                    }
-                }
-            `}</style>
-
             {/* Atmospheric field */}
             <div
                 className="absolute inset-0 opacity-95"
