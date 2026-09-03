@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
@@ -25,6 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-WJ5HK6FC" />
+
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} relative bg-[#0D0D0D] antialiased`}
       >
